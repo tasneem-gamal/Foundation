@@ -1,0 +1,777 @@
+/* Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+}
+:root {
+    --main-color: #EFB495;
+    --sub-color: #1450A3;
+    --links-color: #5F8D4E;
+    --section-color: #E4F1FF;
+    --shade-black: #474646;
+    --main-trans: 0.3s;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small screens */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium screens */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large screens */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+.learn{
+    background-color: white;
+    padding: 15px 50px;
+    color: var(--sub-color);
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.get {
+    background-color: var(--sub-color);
+    padding: 15px 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    border: 2px solid var(--sub-color);
+}
+/* End Global Rules */
+/* Start Header */
+.header {
+    position: relative;
+    background-color: var(--main-color);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header .container .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .container .logo img {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.header .container .logo .text {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.header .container .logo .text h2 {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+.header .container .logo .text span {
+    color: #474646;
+    font-size: 18px;
+}
+.header .container .links {
+    display: flex;
+    align-items: center;
+}
+.header .container .links li {
+    padding: 0 30px;
+}
+.header .container .links li a {
+    font-size: 18px;
+    color: black;
+}
+.header .container .links > li a.active,
+.header .container .links > li a:hover {
+    font-weight: bold;
+}
+.header .container .links > li i{
+    font-size: 12px;
+    margin-left: 5px;
+}
+.header .container .links > span{
+    background-color: var(--sub-color);
+    padding: 10px 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header .container .links > span:hover {
+    background-color: white;
+    color: var(--sub-color);
+}
+
+.header .menu {
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    left: 38%;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    top: calc(100% + 5px);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--main-transition);
+}
+.header .links > li:hover .menu {
+    opacity: 1;
+    z-index: 100;
+}
+.header .menu:before{
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    right: 50px;
+    top: -28px;
+}
+.header .menu .library{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 10px;
+}
+.header .menu .library li a{
+    color: black;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.header .menu .library li a:hover {
+    color: var(--links-color);
+}
+/*  End Header */
+/* start landing */
+.landing {
+    position: relative;
+    background-color: var(--main-color);
+}
+.landing .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 60px);
+}
+.landing .container .title {
+    margin-bottom: 100px;
+}
+.landing .container .title h1 {
+    font-size: 72px;
+    line-height: 1.2;
+}
+.landing .container .title p{
+    width: 400px;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--shade-black);
+}
+.landing .container .image img {
+    max-width: 100%;
+    width: 900px;
+    height: 500px;
+    margin-bottom: 100px;
+}
+/* end landing */
+/* start section */
+.section {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-color);
+}
+.section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section .container .text h3 {
+    font-size: 22px;
+}
+.section .container .text p {
+    width: 400px;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--shade-black);
+}
+/* end section */
+/* start logo */
+.logo-s {
+    position: relative;
+}
+.logo-s .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.logo-s .container img{
+    width: 150px;
+}
+/* end logo */
+/* start features */
+.features {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.features .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.features .container .text {
+    width: 500px;
+}
+.features .container .text h4{
+    font-size: 22px;
+    color: var(--links-color);
+}
+.features .container .text h1{
+    font-size: 60px;
+    margin: 0;
+}
+.features .container .text p {
+    width: 400px;
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding-bottom: 20px;
+}
+.features .container ul  {
+    position: relative;
+}
+.features .container ul li{
+    margin: 40px 0;
+    font-size: 24px;
+    border-bottom: 1px solid #929191;
+    width: 400px;
+    padding-bottom: 25px;
+}
+.features .container ul li:hover {
+    border-color: var(--sub-color);
+    border-width: 2px;
+}
+.features .container ul li:hover a,
+.features .container ul li:hover i{
+    color: var(--sub-color);
+}
+.features .container ul li .para{
+    display: none;
+    font-size: 18px;
+    height: 20px;
+}
+.features .container ul li:hover .para{
+    display: block;
+}
+.features .container ul li a{
+    color: black;
+    font-weight: bold;
+}
+.features .container ul li a i{
+    margin-right: 15px;
+    color: black;
+}
+.features .container .image img{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 800px;
+    height: 600px;
+}
+/* end features */
+/* start team */
+.team {
+    position: relative;
+    background-color: var(--main-color);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.team .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.team .container .image img {
+    width: 500px;
+}
+.team .container .image figcaption {
+    text-align: center;
+    color: var(--shade-black);
+}
+.team .container .text {
+    width: 500px;
+}
+.team .container .text h4{
+    font-size: 22px;
+    color: #952323;
+}
+.team .container .text h1{
+    font-size: 60px;
+    margin: 0;
+}
+.team .container .text > p {
+    width: 400px;
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding-bottom: 20px;
+}
+.team .container .text .box {
+    background-color: white;
+    width: 500px;
+    padding: 15px 15px;
+    border-bottom: 5px solid var(--sub-color);
+}
+.team .container .text .box p{
+    font-size: 22px;
+}
+.team .container .text .box p span {
+    font-weight: bold;
+}
+.team .container .text .box .content {
+    display: flex;
+    align-items: center;
+}
+.team .container .text .box .content img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.team .container .text .box .content .title{
+    margin-left: 10px;
+}
+.team .container .text .box .content .title h3{
+    margin: 0;
+}
+.team .container .text .box .content .title span{
+    font-size: 16px;
+}
+/* end team */
+/* start communication */
+.communicate {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px
+}
+.communicate .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.communicate .container .text h4{
+    font-size: 22px;
+    color: var(--sub-color);
+}
+.communicate .container img{
+    max-width: 600px;
+}
+.communicate .container .image figcaption {
+    color: var(--shade-black);
+    text-align: center;
+    font-size: 14px;
+}
+.communicate .container .text h1{
+    font-size: 60px;
+    margin: 0;
+    width: 400px;
+}
+.communicate .container .text > p {
+    width: 400px;
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding-bottom: 20px;
+}
+.communicate .container .text button{
+    background-color: var(--sub-color);
+    padding: 15px 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid var(--sub-color);
+}
+.communicate .container .sub{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.communicate .container .sub .box{
+    padding: 10px 0;
+}
+.communicate .container .sub .box p{
+    font-size: 18px;
+}
+.communicate .container .sub .box p span {
+    font-weight: bold;
+}
+.communicate .container .sub .box a{
+    text-decoration: underline;
+    color: var(--sub-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+/* end communication */
+/* start visitors */
+.visitors {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--section-color);
+}
+.visitors .container .title{
+    text-align: center;
+    width: 500px;
+    padding-bottom: 30px;
+    margin: auto;
+}
+.visitors .container .title h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.visitors .container .title h1{
+    font-size: 60px;
+    line-height: 1;
+    margin: 0;
+}
+.visitors .container .title p{
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding: 0 10px;
+}
+.visitors .container .gallery{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+.visitors .container .gallery .box{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: var(--main-trans);
+}
+.visitors .container .gallery .box:hover{
+    background-color: var(--sub-color);
+    color: white;
+}
+.visitors .container .gallery .box h1{
+    font-size: 22px;
+    text-align: center;
+}
+.visitors .container .gallery img{
+    max-width: 100%;
+}
+/* end visitors */
+/* start trusted */
+.trusted {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+.trusted .container{
+    position: relative;
+}
+.trusted .container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -120px;
+    background-color: #cccaca;
+}
+.trusted .container .text {
+    text-align: center;
+    width: 800px;
+    margin: auto;
+}
+.trusted .container .text h2{
+    font-size: 26px;
+    color: var(--sub-color);
+}
+.trusted .container .text p{
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding: 0 10px;
+}
+.trusted .container .text h4{
+    margin: 40px 0 0;
+    font-size: 18px;
+}
+.trusted .container .text span{
+    color: var(--shade-black);
+    font-size: 18px;
+}
+.trusted .container .bull{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50px;
+    display: flex;
+}
+.trusted .container .bull li{
+    width: 10px;
+    height: 10px;
+    background-color: #aaa6a6;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.trusted .container .bull li.active{
+    background-color: var(--sub-color);
+}
+.trusted .container img{
+    width: 250px;
+    position: absolute;
+    right: 0;
+    bottom: -120px;
+}
+/* end trusted */
+/* start hiring */
+.hiring {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.hiring .container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.hiring .container .text {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.hiring .container .text h1{
+    font-size: 60px;
+    margin-bottom: 0;
+}
+.hiring .container .text p{
+    font-size: 24px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding: 0 10px;
+    width: 500px;
+}
+.hiring .container ul {
+    width: 800px;
+    margin: auto;
+}
+
+.hiring .container ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #929191;
+    border-radius: 10px;
+    margin: 20px 20px;
+    transition: var(--main-trans);
+}
+.hiring .container ul li:hover {
+    background-color: var(--sub-color);
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+.hiring .container ul li:hover a,
+.hiring .container ul li:hover p,
+.hiring .container ul li:hover i{
+    color: white;
+}
+.hiring .container ul li a{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.hiring .container ul li p{
+    font-size: 18px;
+    color: #929191;
+    word-spacing: 5px;
+}
+.hiring .container ul li p i{
+    margin-left: 20px;
+    color: #929191;
+}
+/* end hiring */
+/* start free trial */
+.free {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: var(--section-color);
+}
+.free .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.free .container .text h1{
+    font-size: 44px;
+}
+.free .container .text p{
+    font-size: 22px;
+    color: var(--shade-black);
+    line-height: 1.2;
+    padding: 0 10px;
+    width: 500px;
+}
+.free .container .form {
+    width: 600px;
+    display: flex;
+    gap: 10px;
+}
+.free .container .form input[type="email"]{
+    padding: 10px;
+    flex: 1;
+}
+.free .container .form input[type="email"]::placeholder {
+    color: black;
+    font-size: 18px;
+}
+.free .container .form input[type="submit"] {
+    background-color: var(--sub-color);
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid var(--sub-color);
+}
+.free .container .text span{
+    padding-top: 10px;
+    display: block;
+    font-size: 16px;
+    color: #929191;
+}
+.free .container .text span a{
+    text-decoration: underline;
+    color: var(--sub-color);
+}
+/* end free trial */
+/* start footer */
+.footer{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+.footer .container .logo {
+    display: flex;
+    align-items: center;
+}
+.footer .container .logo img {
+    background-color: #713ABE;
+    padding: 10px;
+    border-radius: 10px;
+}
+.footer .container .logo .text {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+.footer .container .logo .text h2 {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+.footer .container .logo .text span {
+    color: #474646;
+    font-size: 18px;
+}
+.footer .container .box p{
+    font-size: 20px;
+    color: #929191;
+    line-height: 1.2;
+    width: 350px;
+}
+.footer .container .box .app{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer .container .box .app li{
+    background-color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.footer .container .box .app li i{
+    color: white;
+    font-size: 25px;
+}
+.footer .container .box .cap a {
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+.footer .container .box .cap span{
+    font-size: 10px;
+    color: white;
+}
+.footer .container .box h2{
+    font-size: 22px;
+}
+.footer .container .box .link {
+    line-height: 1.7;
+    color: #929191;
+    font-size: 18px;
+}
+.footer .container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -20px;
+    background-color: #cccaca;
+}
+
+/* end footer */
